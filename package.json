@@ -1,0 +1,35 @@
+{
+  "name": "hapi-suricate",
+  "version": "1.0.0",
+  "description": "Simple & lightweight Hapi-Mongoose handler",
+  "main": "src/suricate.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/viniciusbo/hapi-suricate.git"
+  },
+  "keywords": [
+    "hapi",
+    "mongoose",
+    "handler",
+    "rest"
+  ],
+  "author": "Vinícius Borriello",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/viniciusbo/hapi-suricate/issues"
+  },
+  "homepage": "https://github.com/viniciusbo/hapi-suricate",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "hapi": "^8.4.0",
+    "mocha": "^2.2.4",
+    "mockgoose": "^2.0.1",
+    "mongoose": "~3.8.24"
+  }
+}
