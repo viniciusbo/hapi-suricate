@@ -1,6 +1,6 @@
 # Hapi Suricate
 
-Simple e flexible Hapi route REST handlers for your Mongoose models.
+Simple and flexible Hapi route REST handlers for your Mongoose models.
 
 ## Instalation
 
