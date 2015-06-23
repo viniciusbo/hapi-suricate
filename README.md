@@ -1,6 +1,6 @@
 # Hapi Suricate
 
-Simple and flexible Hapi route REST handlers for your Mongoose models.
+Simple and flexible REST route handlers for your Mongoose models.
 
 ```javascript
 var handler = new Suricate(MongooseModel);
