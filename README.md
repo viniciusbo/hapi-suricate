@@ -13,7 +13,7 @@ hapi.route([
 
 ## Instalation
 
-Run `npm install hapi-suricate` on your project folder.
+Run `npm install --save hapi-suricate` on your project folder.
 
 
 ## Basic usage
