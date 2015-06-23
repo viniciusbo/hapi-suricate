@@ -2,13 +2,23 @@
 
 Simple and flexible Hapi route REST handlers for your Mongoose models.
 
+```javascript
+var handler = new Suricate(MongooseModel);
+hapi.route([
+  method: 'POST',
+  path: '/route',
+  handler: handler.create
+]);
+```
+
 ## Instalation
 
 Run `npm install hapi-suricate` on your project folder.
 
-## Usage
 
-You can directly bind handlers to your routes or use Suricate with callbacks:
+## Basic usage
+
+Bind `.create`, `.find`, `.findById`, `.update` and `.remove` directly to your routes:
 
 ```javascript
 var Hapi = require('hapi');
@@ -16,14 +26,53 @@ var mongoose = require('mongoose');
 var Suricate = require('hapi-suricate');
 
 // Define your models
-var SubSchema = new mongoose.Schema({
-  title: String
-});
-var Schema = new mongoose.Schema({
-  name: String,
-  age: Number,
-  subSchema: [SubSchema]
-});
+var Schema = new mongoose.Schema({ });
+var Model = mongoose.model('Model', Schema);
+
+// Instantiate Hapi server
+var hapi = new Hapi.Server();
+var handler = new Suricate(Model);
+
+// Define routes
+hapi.route([
+  {
+    method: 'POST',
+    path: '/model',
+    handler: handler.create
+  },
+  {
+    method: 'GET',
+    path: '/model',
+    handler: handler.find
+  },
+  {
+    method: 'GET',
+    path: '/model/{id}',
+    handler: handler.findById
+  },
+  {
+    method: 'PUT',
+    path: '/model/{id}',
+    handler: handler.update
+  },
+  {
+    method: 'DELETE',
+    path: '/model/{id}',
+    handler: handler.remove
+  }
+]);
+```
+## Using with your own route handlers
+
+This is useful when working with subresources.
+
+```javascript
+var Hapi = require('hapi');
+var mongoose = require('mongoose');
+var Suricate = require('hapi-suricate');
+
+// Define your models
+var Schema = new mongoose.Schema({ });
 var Model = mongoose.model('Model', Schema);
 
 // Instantiate Hapi server
