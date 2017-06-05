@@ -1,6 +1,6 @@
 {
   "name": "hapi-suricate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Simple e flexible Hapi route REST handlers for your Mongoose models.",
   "main": "src/suricate.js",
   "directories": {
