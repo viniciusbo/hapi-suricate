@@ -42,7 +42,7 @@ function Suricate(Model) {
 	};
 
 	this.update = function(request, reply, callback) {
-		Model.findOneAndUpdate({ _id: request.params.id }, request.payload, { upsert: true, }, function(err, doc) {
+		Model.findOneAndUpdate({ _id: request.params.id }, request.payload, function(err, doc) {
 			callReplyOrCallback(err, doc, reply, callback);
 		});
 	};
